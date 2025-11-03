@@ -43,8 +43,3 @@ Agregação e Composição
 Para modelar os relacionamentos entre objetos, usamos:
 
 Composição (Relação Forte): Representada pelo losango preenchido entre Paciente e HistoricoMedico. O HistoricoMedico é criado dentro do Paciente e seu ciclo de vida depende totalmente dele.
-
-Agregação (Relação Fraca): Representada pelo losango vazio entre Consulta e Exame. Uma Consulta pode ter um Exame, mas eles têm ciclos de vida independentes (o Exame é criado fora e "agregado" à consulta).
-=======
-# Sistema-M-dico
->>>>>>> 6206a977d35998968f00da090d99f469209db2e0
