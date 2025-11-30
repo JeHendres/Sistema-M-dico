@@ -18,7 +18,7 @@ public class Main {
 
         Enfermeiro enfRicardo = new Enfermeiro(
                 "Ricardo Mendes", 35, "Rua das Flores, 50",
-                "987654-SP" /
+                "987654-SP" 
         );
 
         Paciente pacJoao = new Paciente(
