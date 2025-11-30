@@ -1,45 +1,48 @@
-<<<<<<< HEAD
-Projeto AP2 - Sistema de Clínica (POO em Java)
+# Sistema Médico: Implementação de POO (Java)
 
-Alunos: Rafael Dalavale Kaiser Pinto e Jeronimo Hendres
-Tema: Sistema de Gerenciamento de Clínica
+Olá! Bem-vindo ao repositório do projeto **Sistema Médico**.
 
-1. Breve Explicação dos Conceitos Aplicados
+Este projeto foi desenvolvido como um estudo aprofundado e prático dos pilares da Programação Orientada a Objetos (POO) em Java, aplicando conceitos de Herança, Polimorfismo, Agregação, Composição e Associações.
 
-Este documento detalha como os principais requisitos de Programação Orientada a Objetos (POO) foram aplicados neste projeto, conforme solicitado na atividade.
+## Status Atual e Funcionalidades Implementadas
 
-Encapsulamento
+O projeto está 100% funcional em sua estrutura de classes e testes!
 
-O encapsulamento foi a base de todas as nossas classes. Todos os atributos (como nome em Pessoa ou crm em Medico) foram declarados como private ("-" no diagrama UML). Para acessá-los, criamos métodos públicos get e set, garantindo que os dados internos de cada objeto estejam protegidos e só possam ser alterados de forma controlada.
+Status | Detalhe |
 
-Herança (com 2 Níveis) e Classe Abstrata
+**Pilha Tecnológica** | Java JDK 24, JUnit 5!
+**Implementações POO** | Herança, Polimorfismo, Encapsulamento, Associações, Agregação e Composição.!
+**Status dos Testes** | Todos os testes unitários (8/8) estão **PASSANDO**! 
+**Ambiente Validado** | O problema de *Classpath* e execução de testes no ambiente foi **solucionado**!
 
-Usamos a herança para reutilizar código e criar uma hierarquia lógica.
+### Estrutura do Projeto
 
-Classe Abstrata: A classe Pessoa foi definida como abstract. Ela serve como um "molde" para outras classes, contendo atributos comuns (nome, idade, etc.), mas ela mesma não pode ser instanciada.
+O código foi dividido em pacotes lógicos (`app` e `modelo`) e a estrutura de classes modela as interações centrais de uma clínica:
 
-Herança Nível 1: As classes Paciente, Enfermeiro e Especialista herdam diretamente de Pessoa (usando extends Pessoa).
+* **Pessoas e Herança:** Classes `Pessoa`, `Medico` e `Enfermeiro`.
+* **Serviços:** Classes `Consulta`, `Exame` e `Receita`.
+* **Histórico:** Classe `HistoricoMedico` (demonstra Composição, pois só existe com um `Paciente`).
+* **Interface:** Implementação da interface `Agendavel` pelas classes `Consulta` e `Exame`.
 
-Herança Nível 2: Para cumprir o requisito, a classe Medico herda de Especialista. Isso cria a cadeia de herança completa de 2 níveis: Pessoa $\rightarrow$ Especialista $\rightarrow$ Medico.
+## Testes Unitários com JUnit 5
 
-Polimorfismo (Sobrescrita e Sobrecarga)
+Esta é a parte crucial! As funcionalidades foram validadas usando o framework **JUnit 5**, garantindo a integridade dos cálculos e interações entre objetos.
 
-Aplicamos os dois tipos de polimorfismo:
+Todos os testes unitários (localizados na pasta `test/modelo/`) foram executados com sucesso, confirmando:
 
-Sobrescrita (Overriding): A classe abstrata Pessoa define o método abstrato realizarRotina(). As classes filhas (Paciente, Medico e Enfermeiro) são obrigadas a implementar (sobrescrever) este método, cada uma com um comportamento diferente. Demonstramos isso na Main.java chamando o mesmo método em objetos de tipos diferentes.
+* **`ConsultaTest`:** Validação do agendamento e dos cálculos de custo (com e sem desconto).
+* **`HistoricoMedicoTest`:** Confirmação de que as consultas são adicionadas corretamente ao histórico do paciente (Composição).
+* **`MedicoTest`:** Validação da herança de atributos e do processo de prescrição de medicamentos (Associação).
 
-Sobrecarga (Overloading): Na classe Consulta, criamos dois métodos com o mesmo nome: calcularCusto() (sem parâmetros) e calcularCusto(double desconto) (que aceita um desconto).
+## Como Rodar e Testar
 
-Interfaces
+Este projeto pode ser executado em qualquer IDE moderna (IntelliJ IDEA, VS Code) que suporte o JDK 24. O ambiente foi validado com sucesso no **Visual Studio Code** usando o **Extension Pack for Java**.
 
-Para criar um "contrato" que classes diferentes pudessem assinar, criamos a interface Agendavel.
+1.  **Clone o Repositório:**
+    
+    git clone [https://github.com/JeHendres/Sistema-M-dico.git](https://github.com/JeHendres/Sistema-M-dico.git)
 
-Ela define os métodos agendar() e cancelar().
+2.  **Abra o Projeto:** Use o VS Code e abra a pasta raiz `Sistema Médico`.
+3.  **Execute a Aplicação:** Para ver o fluxo principal, execute o método `main` em `app/Main.java`.
+4.  **Execute os Testes:** Vá para a aba **Testing** (Tubo de Ensaio) no VS Code e clique no ícone **Play** para rodar toda a suíte de testes.
 
-As classes Consulta e Exame implementam esta interface (usando implements Agendavel), cumprindo o requisito de uma interface implementada por duas classes distintas.
-
-Agregação e Composição
-
-Para modelar os relacionamentos entre objetos, usamos:
-
-Composição (Relação Forte): Representada pelo losango preenchido entre Paciente e HistoricoMedico. O HistoricoMedico é criado dentro do Paciente e seu ciclo de vida depende totalmente dele.
