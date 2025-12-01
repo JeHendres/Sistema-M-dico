@@ -75,7 +75,7 @@ public class Main {
         System.out.println("Receita gerada: " + receita.toString());
         
         System.out.println("\n=======================================================");
-        System.out.println("  INÍCIO DA VIEW: INTERAÇÃO USUÁRIO (Controller/Model)");
+        System.out.println(" ========= MENU DE OPÇÕES - SISTEMA MÉDICO ============ ");
         System.out.println("=======================================================");
         
         // NOVO: INÍCIO DA CAMADA VIEW/MENU
@@ -129,7 +129,7 @@ public class Main {
                     String nome = scanner.nextLine();
                     
                     System.out.print("Idade: ");
-                    // Tratamento simples para garantir que a entrada seja um número inteiro
+                    // Garantimos que a entrada seja um número inteiro
                     int idade = 0;
                     try {
                         idade = Integer.parseInt(scanner.nextLine());
@@ -141,13 +141,13 @@ public class Main {
                     System.out.print("Endereço: ");
                     String endereco = scanner.nextLine();
                     
-                    // CHAMADA AO CONTROLLER para criar o objeto Model
+                    // Chama o Controller para criar o objeto Model
                     Paciente novoPaciente = pacienteController.cadastrarNovoPaciente(nome, idade, endereco);
                     System.out.println("\n Paciente " + novoPaciente.getNome() + " (ID: " + novoPaciente.getId() + ") cadastrado com sucesso!");
                     break;
                     
                 case "2":
-                    // VIEW: Chama o CONTROLLER para buscar a lista de Models
+                    // Chama o Controller para buscar a lista de Models
                     System.out.println("\n--- LISTA DE PACIENTES ---");
                     for (Paciente p : pacienteController.listarTodos()) {
                         System.out.println("ID: " + p.getId() + " | Nome: " + p.getNome() + " | Idade: " + p.getIdade() + " anos");

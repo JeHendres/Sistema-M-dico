@@ -1,48 +1,49 @@
-# Sistema Médico: Implementação de POO (Java)
+## Sistema Médico: Projeto de POO em Java!
 
-Olá! Bem-vindo ao repositório do projeto **Sistema Médico**.
+## Meu nome é Rafael Dalavale Kaiser Pinto, e este aqui é o meu projeto final para a disciplina de Programação Orientada a Objetos (POO).
 
-Este projeto foi desenvolvido como um estudo aprofundado e prático dos pilares da Programação Orientada a Objetos (POO) em Java, aplicando conceitos de Herança, Polimorfismo, Agregação, Composição e Associações.
+O Sistema Médico foi o meu desafio para provar que eu entendi a POO, criando algo funcional e que simula processos de uma clínica.
 
-## Status Atual e Funcionalidades Implementadas
+## O Que É Este Sistema e o Que Eu Fiz?
 
-O projeto está 100% funcional em sua estrutura de classes e testes!
+Meu objetivo foi modelar as entidades e interações de saúde em Java. O sistema faz duas coisas principais:
 
-Status | Detalhe |
+## Demonstração da Teoria (POO na Prática): No início da execução, o código roda automaticamente um bloco que prova que os pilares da POO estão funcionando:
 
-**Pilha Tecnológica** | Java JDK 24, JUnit 5!
-**Implementações POO** | Herança, Polimorfismo, Encapsulamento, Associações, Agregação e Composição.!
-**Status dos Testes** | Todos os testes unitários (8/8) estão **PASSANDO**! 
-**Ambiente Validado** | O problema de *Classpath* e execução de testes no ambiente foi **solucionado**!
+- Herança: Eu fiz o médico, enfermeiro e paciente herdarem de uma classe Pessoa base.
 
-### Estrutura do Projeto
+- Polimorfismo: Cada um desses personagens tem uma rotina diferente (o médico faz o dele, o paciente o dele).
 
-O código foi dividido em pacotes lógicos (`app` e `modelo`) e a estrutura de classes modela as interações centrais de uma clínica:
+- Associações e Agregação: Eu mostro como um médico prescreve uma receita para um paciente e como um exame é agregado a uma consulta.
 
-* **Pessoas e Herança:** Classes `Pessoa`, `Medico` e `Enfermeiro`.
-* **Serviços:** Classes `Consulta`, `Exame` e `Receita`.
-* **Histórico:** Classe `HistoricoMedico` (demonstra Composição, pois só existe com um `Paciente`).
-* **Interface:** Implementação da interface `Agendavel` pelas classes `Consulta` e `Exame`.
+- Composição: O histórico médico só existe se houver um paciente.
 
-## Testes Unitários com JUnit 5
+- Menu Interativo (Gerenciamento de Pacientes): Depois da demonstração, o sistema abre um menu simples onde o usuário pode interagir. Eu implementei a arquitetura Model-View-Controller (MVC) para gerenciar os dados dos pacientes, permitindo:
 
-Esta é a parte crucial! As funcionalidades foram validadas usando o framework **JUnit 5**, garantindo a integridade dos cálculos e interações entre objetos.
+- Cadastrar novos pacientes.
 
-Todos os testes unitários (localizados na pasta `test/modelo/`) foram executados com sucesso, confirmando:
+- Listar todos os pacientes.
 
-* **`ConsultaTest`:** Validação do agendamento e dos cálculos de custo (com e sem desconto).
-* **`HistoricoMedicoTest`:** Confirmação de que as consultas são adicionadas corretamente ao histórico do paciente (Composição).
-* **`MedicoTest`:** Validação da herança de atributos e do processo de prescrição de medicamentos (Associação).
+- Buscar um paciente por ID e atualizar o endereço dele (as funções CRUD mais importantes).
 
-## Como Rodar e Testar
+## A parte mais difícil não foi escrever o código da clínica, mas sim fazer ele rodar corretamente.
 
-Este projeto pode ser executado em qualquer IDE moderna (IntelliJ IDEA, VS Code) que suporte o JDK 24. O ambiente foi validado com sucesso no **Visual Studio Code** usando o **Extension Pack for Java**.
+## O Problema: Quando eu introduzi a arquitetura MVC (o PacienteController.java e o menu), o meu ambiente de desenvolvimento começou a dar um erro chato de "unresolved compilation problem". Basicamente, o compilador não conseguia enxergar o novo código, mesmo ele estando no lugar certo.
 
-1.  **Clone o Repositório:**
-    
-    git clone [https://github.com/JeHendres/Sistema-M-dico.git](https://github.com/JeHendres/Sistema-M-dico.git)
+## A Solução: Eu tive que ignorar o sistema automático do meu editor e usar comandos manuais no terminal (javac para compilar e java -cp . para executar). Isso forçou o sistema a enxergar todos os arquivos de uma vez e provou que o código estava correto o tempo todo—o problema era só de configuração.
 
-2.  **Abra o Projeto:** Use o VS Code e abra a pasta raiz `Sistema Médico`.
-3.  **Execute a Aplicação:** Para ver o fluxo principal, execute o método `main` em `app/Main.java`.
-4.  **Execute os Testes:** Vá para a aba **Testing** (Tubo de Ensaio) no VS Code e clique no ícone **Play** para rodar toda a suíte de testes.
+- Foi um desafio técnico que me ensinou muito sobre como o Java realmente funciona por baixo dos panos!
 
+## Como Rodar o Sistema
+
+- O sistema está 100% funcional. É só seguir estes passos:
+
+- Clone o Repositório: Traga o projeto para o seu computador.
+
+- git clone [link do seu GitHub]
+
+- Abra o Projeto: Use o seu editor de código preferido.
+
+- Execute o Main: Rode o método main que está em app/Main.java.
+
+## Aproveite: O programa vai rodar a demonstração de POO e, em seguida, abrir o Menu Principal onde você pode testar as funções de gerenciamento de pacientes.

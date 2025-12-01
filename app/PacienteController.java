@@ -1,6 +1,6 @@
 package app;
 
-import modelo.Paciente; // ESSENCIAL: Garante que o Modelo é importado
+import modelo.Paciente; 
 import java.util.ArrayList;
 import java.util.List;
 
