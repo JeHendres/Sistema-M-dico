@@ -25,7 +25,7 @@ public class Main {
 
         Enfermeiro enfRicardo = new Enfermeiro(
                 "Ricardo Mendes", 35, "Rua das Flores, 50",
-                "987654-SP" 
+                "987654-SP"
         );
 
         Paciente pacJoao = new Paciente(
@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("\n--- 4. Testando a Interface (Agendavel) ---");
         // Ajuste no construtor para corresponder ao seu código original:
-        Consulta consulta = new Consulta(new Date()); 
+        Consulta consulta = new Consulta(new Date());
         Exame exameSangue = new Exame("Hemograma Completo");
 
         Agendavel[] listaParaAgendar = {consulta, exameSangue};
@@ -66,7 +66,7 @@ public class Main {
 
         System.out.println("\n--- 7. Testando Composição ---");
         // Ajuste para o seu método getter real
-        HistoricoMedico historico = pacJoao.getHistoricoMedico(); 
+        HistoricoMedico historico = pacJoao.getHistoricoMedico();
         historico.adicionarConsulta(consulta);
         System.out.println("Consultas no histórico do Paciente " + pacJoao.getNome() + ": " + historico.getListaConsultas().size());
 
@@ -99,7 +99,7 @@ public class Main {
                     menuGerenciarPacientes();
                     break;
                 case "2":
-                    System.out.println("👋 Sistema Médico encerrado. Até mais!");
+                    System.out.println("Sistema Médico encerrado. Até mais!");
                     rodando = false;
                     break;
                 default:
@@ -107,7 +107,7 @@ public class Main {
             }
         }
         // É importante fechar o Scanner no final do programa.
-        scanner.close(); 
+        scanner.close();
     }
 
     // Sub-menu para Gerenciar Pacientes
@@ -134,7 +134,7 @@ public class Main {
                     try {
                         idade = Integer.parseInt(scanner.nextLine());
                     } catch (NumberFormatException e) {
-                        System.out.println("⚠️ Idade inválida. Cadastro cancelado.");
+                        System.out.println(" Idade inválida. Cadastro cancelado.");
                         break;
                     }
                     
