@@ -26,6 +26,10 @@ public class Paciente extends Pessoa {
         return idPaciente;
     }
 
+    public int getId() {
+        return this.idPaciente;
+    }
+
     public void setIdPaciente(int idPaciente) {
         this.idPaciente = idPaciente;
     }
